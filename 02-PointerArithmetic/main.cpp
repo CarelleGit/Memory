@@ -57,17 +57,25 @@ int main()
 	cout << "\t" << findCount(4, count, 4) << "\n";
 	// 2.
 	cout << "2.|\n--\n";
-	int * dst = new int[4]{ 2,5,7,3 };
-	int * src = new int[4]{ 3,4,5,6 };
+	int * dst = new int[4];
+	int * src = new int[4];
     arrCopy(src, 4, dst, 4);
+	cout << src << "\n" << dst << "\n";
 	// 3.
 	cout << "3.|\n--\n";
-	int * reverse = new int[4]{ 2,4,56,4 };
+	int * reverse = new int[4];
 	cout << "\t" << arrReversal(reverse, 4) << "\n";
 	// 4.
 	cout << "4.|\n--\n";
-	
+	char * cstr = new char[4];
+	cstr[0] = 'c';
+	cstr[1] = 'a';
+	cstr[2] = 't';
+	cstr[3] = '\0';
+	cstrReversal(cstr, 4);
+	cout << cstr << "\n";
 
+	delete[] cstr;
 	delete[] src;
 	delete[] dst;
 	delete[] count;

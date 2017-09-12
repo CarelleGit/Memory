@@ -69,15 +69,17 @@ int arrReversal(int * arr, int size)
 }
 
 void cstrReversal(char * arr, int size)
-{
+{	
+	int len = 0;
 	for (int i = 0; i < size; i++)
 	{
-		char temp = *(arr + i);
-		if (*(arr + size - 1 - i))
-		{
-			*(arr + i) = *(arr + size - 1 - i);
-			*(arr + size - 1 - i) = temp;
-		}
+		if (*(arr + i) == '\0') { break; }
+		len++;
 	}
-
+	for (int i = 0; i < len; i++)
+	{
+		int temp = *(arr + i);
+		*(arr + i) = *(arr + size - 1 - i);
+		*(arr + size - 1 - i) = temp;
+	}
 }
