@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02-PointerArithmetic", "02-
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03-References", "03-References\03-References.vcxproj", "{883E44F1-2FFF-4DD2-86D4-4FFFF3F07F36}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-Compilation", "04-Compilation\04-Compilation.vcxproj", "{3241314F-2651-4071-823C-D3961EF645CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{883E44F1-2FFF-4DD2-86D4-4FFFF3F07F36}.Release|x64.Build.0 = Release|x64
 		{883E44F1-2FFF-4DD2-86D4-4FFFF3F07F36}.Release|x86.ActiveCfg = Release|Win32
 		{883E44F1-2FFF-4DD2-86D4-4FFFF3F07F36}.Release|x86.Build.0 = Release|Win32
+		{3241314F-2651-4071-823C-D3961EF645CA}.Debug|x64.ActiveCfg = Debug|x64
+		{3241314F-2651-4071-823C-D3961EF645CA}.Debug|x64.Build.0 = Debug|x64
+		{3241314F-2651-4071-823C-D3961EF645CA}.Debug|x86.ActiveCfg = Debug|Win32
+		{3241314F-2651-4071-823C-D3961EF645CA}.Debug|x86.Build.0 = Debug|Win32
+		{3241314F-2651-4071-823C-D3961EF645CA}.Release|x64.ActiveCfg = Release|x64
+		{3241314F-2651-4071-823C-D3961EF645CA}.Release|x64.Build.0 = Release|x64
+		{3241314F-2651-4071-823C-D3961EF645CA}.Release|x86.ActiveCfg = Release|Win32
+		{3241314F-2651-4071-823C-D3961EF645CA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
