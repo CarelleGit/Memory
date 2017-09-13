@@ -1,0 +1,3 @@
+Name: Cala
+Age: 21
+Favorite color: Blue
