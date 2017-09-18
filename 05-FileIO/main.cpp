@@ -1,12 +1,44 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include "Functions.h"
 using std::cout;
 using std::cin;
 using std::string;
 using std::fstream;
 
 
+
+void main2()
+{
+	string inputBuffer;
+
+	cout << "Where to save?\n";
+	getline(cin, inputBuffer);
+	fstream profile;
+	profile.open(inputBuffer.c_str());
+	if (profile.fail())
+	{
+		cout << "Sorry\n";
+		return;
+	}
+	cin.ignore(1000, '\n');
+
+	cout << "Name?\n";
+	getline(cin, inputBuffer);
+	profile << inputBuffer << "\n";
+	cin.ignore(1000, '\n');
+	cout << "Age?\n";
+	getline(cin, inputBuffer);
+	profile << inputBuffer << "\n";
+	cin.ignore(1000, '\n');
+	cout << "Favorite Color?\n";
+	profile << inputBuffer << "\n";
+	cin.ignore(1000, '\n');
+	profile.flush();
+	profile.close();
+	cout << "thanks =D\n";
+}
 
 int main()
 {
@@ -47,40 +79,78 @@ int main()
 	//		return -1;
 	//	}
 	//	autogen.close();
-	string User;
-	cout << "What file would you like to read\n>";
-	cin >> User;
-	file.open(User);
-	if (file.fail())
+	
+	/*while (true)
 	{
-		cout << "Sorry this file does not exsit\n";
-	}
-	while (std::getline(file, User))
+		string User;
+		cout << "What file would you like to read\n>";
+		cin >> User;
+		file.open(User);
+		if (file.fail())
+		{
+			cout << "Sorry this file does not exsit\n";
+			continue;
+		}
+		while (std::getline(file, User))
+		{
+			cout << User << "\n";
+	
+		}
+		file.close();
+		break;
+	}*/
+	//main2();
+	fstream EnitiyStream;
+	EnitiyStream.open("monster.txt");
+
+	if (EnitiyStream.fail())
 	{
-		cout << User << "\n";
+		cout << "Sorry not found\n";
 	}
-	file.close();
-	cout << "save file\n>";
-	cin >> User;
-	file.open(User);
-	if (file.fail())
+	int entityCount = 0;
+	Entity Monster[100];
+
+	while (true)
 	{
-		cout << "Sorry this file does not exsit\n";
-		return 0;
+		string buf;
+		bool found = false;
+		while (getline(EnitiyStream, buf))
+		{
+			if (buf[0] == '@') 
+			{ 
+				found = true;
+				break;
+			}
+		}
+		if ( !found)
+		{
+			break;
+		}
+		Entity &curEntity = Monster[entityCount];
+		getline(EnitiyStream, buf);
+		curEntity.hitp = stof(buf);
+
+		getline(EnitiyStream, buf);
+		curEntity.armor = stof(buf);
+
+		getline(EnitiyStream, buf);
+		curEntity.str = stof(buf);
+
+		getline(EnitiyStream, buf);
+		curEntity.def = stof(buf);
+
+		getline(EnitiyStream, buf);
+		curEntity.adi = stof(buf);
+
+		getline(EnitiyStream, buf);
+		curEntity.luck = stof(buf);
+		
+		entityCount++;
+		if (entityCount >= 100)
+		{
+			break;
+		}
 	}
-	cout << "Name?\n>";
-	cin >> User;
-	file << "Name: " << User << "\n";
-
-	cout << "Age\n>";
-	cin >> User;
-	file << "Age: " << User << "\n";
-
-	cout << "Favorite color\n>";
-	cin >> User;
-	file << "Favorite color: " << User << "\n";
-	file.close();
-
 
 
 	while (true) {}
